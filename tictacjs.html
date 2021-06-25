@@ -10,16 +10,31 @@
     }
 
     #game-board {
-        border: solid 1px black;
+        border: solid 2px lightgreen;
         margin-bottom: 2em;
+        background-color: lightgoldenrodyellow;
+        background-image: url(https://media.tenor.com/images/00cd4b5ed5ee50cca00736a888475ec1/tenor.gif);
     }
 
     #game-board td {
-        border: solid 1px black;
+        border: groove 1px lightgreen;
         height: 80px;
         width: 80px;
         text-align: center;
         font-size: 45px;
+        color: lightgreen;
+    }
+
+    #start-game {
+        border-radius: 20%;
+        margin-left: 15px;
+        background-color: lightseagreen;
+        color: darkolivegreen;
+    }
+
+    h1{
+        color: darkolivegreen;
+        margin-left: 20px;
     }
   </style>
 </head>
@@ -140,12 +155,12 @@
       //
       // Return true if placed (spot was empty); false if not placed (spot already full)
 
-      // if (board[cellNumber] === null) {
+      if (board[cellNumber] === null) {
           board[cellNumber] = pieceType;
           return true;
-      // }
+      }
 
-      // return false;
+      return false;
   }
 
 
@@ -154,7 +169,7 @@
 
       for (var i = 0; i < 9; i++) {
           if (i === 3 || i === 7){
-              board[i] = "o";
+              board[i] = "O";
               return board;
           }
           if (board[i] === null) {
@@ -172,7 +187,7 @@
       var gameOver = false;
 
       if (winner) {
-          $("h1").text(winner + " lost");
+          $("h1").text(winner + " won");
           gameOver = true;
       }
 
